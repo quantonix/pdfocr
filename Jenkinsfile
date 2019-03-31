@@ -13,7 +13,7 @@ pipeline {
       agent {
         docker {
           image 'hseeberger/scala-sbt'
-          args '--network network$BRANCH_NAME-$BUILD_NUMBER -v /srv/jenkins/.sbt:/tmp/.sbt -v /srv/jenkins/.ivy2:/tmp/.ivy2'
+          args '-v /srv/jenkins/.sbt:/tmp/.sbt -v /srv/jenkins/.ivy2:/tmp/.ivy2'
           reuseNode true
         }
       }
