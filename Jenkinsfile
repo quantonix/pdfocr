@@ -27,12 +27,12 @@ pipeline {
 
         echo "Running Tests.."
 
-        ansiColor('xterm') {
-          sh '''sbt -Dsbt.global.base=/tmp/.sbt \\
-                    -Dsbt.boot.directory=/tmp/.sbt/boot \\
-                    -Dsbt.ivy.home=/tmp/.ivy2 \\
-                clean test'''
-        }
+        
+        sh '''sbt -Dsbt.global.base=/tmp/.sbt \\
+                  -Dsbt.boot.directory=/tmp/.sbt/boot \\
+                  -Dsbt.ivy.home=/tmp/.ivy2 \\
+              clean test'''
+
 
         stash name:'stash', includes:'**'
       }
